@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Datepicker - Default functionality</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <style type="text/css">
+    form{
+text-align: left;       
+color:white;
+text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+width:150px;
+height:200px;
+font-size: 2em;
+}
+body{
+text-align: center;
+background-image:url("nasa.gif");
+background-repeat: no-repeat;
+background-size: cover;
+width:1000px;
+height:1000px;
+}
+input{
+width:200px;
+height:30px;
+}
+</style>
+</head>
+<body>
+<form>
+  First name:<br><br>
+  <input id="firstname" type="text" name="firstname"><br><br>
+  Last name:<br><br>
+  <input id="lastname" type="text" name="lastname"><br>
+<p>Depart:<br><br> <input type="text" id="datepicker"></p>
+<p>Return: <br><br><input type="text" id="returndate"></p><br>
+<input type="submit" value="Submit">
+</form>
+ 
+<script>
+        $( function() {
+        
+        $(document).ready(function() {
+            
+          $('form').submit(function(){
+              var first= $("#firstname").val();
+              var date=$("#datepicker").val();
+              var last=$("#lastname").val();
+              var date2=$("#returndate").val();
+              
+      if(first==0){
+      alert("Tell me your name, bro.")
+      }else {alert("Greetings, " + first +" "+ last + " ! Your mission to the (secret)moon leaves on " + date+ " and will return on" + date2+ ". That is...if there is indeed, no other intelligent life out there. Stay woke...");
+              return false;
+      }
+      
+          });  $( "#datepicker" ).datepicker();
+          $("#returndate").datepicker();
+        });
+
+        });
+
+        </script>
+</body>
+</html>
